@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class NBClassifier {
 
     public static void main(String[] args) throws Exception {
-        /*File testInput = new File("/Users/alistair/Documents/20_newsgroups/alt.atheism/54564");
+        File testInput = new File("/Users/alistair/Documents/20_newsgroups/alt.atheism/54564");
         Double[] probVec = makeProbVec(testInput);
         double accum = 0.0;
         File outputFile = new File("/Users/alistair/Documents/svm_light_osx.8.4_i7/nbvecs/output");
@@ -18,10 +18,10 @@ public class NBClassifier {
             accum += probVec[i];
         }
         DataFormatter.outputToFile(outputFile,true,probVec);
-        System.out.println(accum);*/
-        NBTester nbtest = new NBTester();
-        nbtest.run(false);
-        System.out.println(nbtest.accuracy());
+        System.out.println(accum);
+        //NBTester nbtest = new NBTester();
+        //nbtest.run(false);
+        //System.out.println(nbtest.accuracy());
         /*SVMTrainer svmtrain = new SVMTrainer();
         svmtrain.run(true);
         SVMTester svmtest = new SVMTester();
@@ -59,7 +59,7 @@ public class NBClassifier {
                         if (stemming) {
                             normalizedWord = MorphaStemmer.stem(normalizedWord);
                         }
-                        if (NBTrainer.generalCount.getCount(normalizedWord)>0) {
+                        if (NBTrainer.totalCount(normalizedWord)>0) {
                             cumuProb += c.probability(normalizedWord);
                             docLength++;
                         }

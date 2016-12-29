@@ -16,11 +16,19 @@ public class NBTrainer {
 
     static File twentyNewsGroupsHome = new File("/Users/alistair/Documents/20_newsgroups/");
 
-    static WordCounter generalCount = new WordCounter();
+    private static WordCounter generalCount = new WordCounter();
+
+    static int totalCount(String word) {
+        return generalCount.getCount(word)+20; //20 accounts for smoothing
+    }
+
+    static int totalWordCount() {
+        return generalCount.getTotalWordCount()+20*vocabSize;
+    }
 
     static HashSet<String> vocabulary = new HashSet<>();
 
-    int vocabSize = vocabulary.size();
+    static int vocabSize = vocabulary.size();
 
     static String[] categoryNames() {
         String[] result = new String[20];

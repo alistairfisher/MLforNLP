@@ -13,14 +13,14 @@ public class WordCounter {
     private int totalWordCount = 0;
 
     Integer getTotalWordCount() {
-        return totalWordCount;
+        return totalWordCount+NBTrainer.vocabSize;
     }
 
     int getCount(String word) {
         if (map.containsKey(word)) {
-            return map.get(word);
+            return map.get(word)+1;
         }
-        else return 0;
+        else return 1;
     }
 
     void addWord(String word) {
