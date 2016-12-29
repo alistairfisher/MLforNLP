@@ -15,7 +15,7 @@ public class NBTester extends TwentyNGInterface {
         int classcorrect = 0;
         int classtotal = 0;
         File[] files = F.listFiles();
-        for (int i=300;i<files.length;i++) {
+        for (int i=NBClassifier.trainingThreshold;i<files.length;i++) {
             Double[] probVec = NBClassifier.makeProbVec(files[i]);
             String classifierChoice = getChoice(probVec,F);
             if (classifierChoice.equals(F.getName())) {

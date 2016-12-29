@@ -18,10 +18,10 @@ public class Category {
     final String name;
 
     double probability(String word) {
-        double PwordGivenCat = ((double) (wordCounter.getCount(word)))/wordCounter.getTotalWordCount();
+        /*double PwordGivenCat = ((double) (wordCounter.getCount(word)))/wordCounter.getTotalWordCount();
         double Pword = ( (double) NBTrainer.totalCount(word)) / NBTrainer.totalWordCount();
-        return PwordGivenCat*categoryPrior/Pword;
-        //return ((double) (wordCounter.getCount(word)))/wordCounter.getTotalWordCount();
+        return PwordGivenCat*categoryPrior/Pword;*/
+        return ((double) (wordCounter.getCount(word)))/wordCounter.getTotalWordCount();
     }
 
 }
